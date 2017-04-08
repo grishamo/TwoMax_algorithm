@@ -1,30 +1,21 @@
+#include <iostream>
 #include "linkedList.h"
+using namespace std;
 
 void main() {
 
-	LinkedList* lst;
 	int numberOfNodes, i, temp;
+	List<int>* lst = new List<int>;
 
-	cout << endl << "Question 1:" << endl;
-	cout << "Please enter number of nodes (minimum 2): ";
-	cin >> numberOfNodes;
+	temp = 999;
+	cout << "Plese enter numbers (at the end enter 999): " << endl;
 
-	if (numberOfNodes <= 1) {
-		cout << "ERROR: less then 2 nodes " << endl;
-		return;
-	}
-
-	lst = new LinkedList(numberOfNodes);
-
-
-	cout << "Plese enter " << numberOfNodes << " numbers: " << endl;
-
-	for (i = 0; i < numberOfNodes; i++) {
-		cin >> temp;
-		lst->InsertNode(temp);
+	cin >> temp;
+	while (temp != 999) {
+		lst->insertNode(temp);
 	}
 
 	cout << "My list: ";
-	lst->PrintList();
+	lst->printList();
 	lst->Find2MaxNumbers();
 }
